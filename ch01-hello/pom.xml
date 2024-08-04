@@ -15,18 +15,4 @@
 
   <name>ch01-hello</name>
 
-  <properties>
-  </properties>
-
-  <dependencies>
-    <dependency>
-      <groupId>org.springframework.session</groupId>
-      <artifactId>spring-session-data-redis</artifactId>
-    </dependency>
-
-    <dependency>
-      <groupId>redis.clients</groupId>
-      <artifactId>jedis</artifactId>
-    </dependency>
-  </dependencies>
 </project>
