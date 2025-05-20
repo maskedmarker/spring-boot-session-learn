@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Configuration status="DEBUG" monitorInterval="30">
+<Configuration status="WARN" monitorInterval="30">
     <!-- 上面的status指的是Log4j 自身内部的日志级别，可以帮助调试 Log4j 的配置问题 -->
 
     <Properties>
-        <Property name="LOG_PATTERN">[%d{yyyy-MM-dd'T'HH:mm:ss.SSSZ}] [%-5p] [%t] [%c]:[%M:%L] - %m%n</Property>
+        <Property name="LOG_PATTERN">%d{yyyy-MM-dd'T'HH:mm:ss.SSSZ} %-5p %t %c{1.}.%M.%L - %m%n</Property>
     </Properties>
 
     <!-- 定义日志上下文 -->
@@ -32,15 +32,9 @@
     <!-- 配置日志记录器 -->
     <Loggers>
         <!-- 设置根日志记录器 -->
-        <Root level="info">
+        <Root>
             <AppenderRef ref="Console"/>
-            <AppenderRef ref="RollingFile"/>
+            <!--            <AppenderRef ref="RollingFile"/>-->
         </Root>
-
-        <!-- 单独配置某个包的日志记录器 -->
-        <Logger name="org.example" level="debug" additivity="false">
-            <AppenderRef ref="Console"/>
-            <AppenderRef ref="File"/>
-        </Logger>
     </Loggers>
 </Configuration>
